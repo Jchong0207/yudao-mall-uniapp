@@ -80,18 +80,18 @@
           >
             <template #tool>
               <view class="ss-flex">
-                <button
-                  class="ss-reset-button apply-btn"
-                  v-if="[10, 20, 30].includes(state.orderInfo.status) && item.afterSaleStatus === 0"
-                  @tap.stop="
-                    sheep.$router.go('/pages/order/aftersale/apply', {
-                      orderId: state.orderInfo.id,
-                      itemId: item.id,
-                    })
-                  "
-                >
-                  申请售后
-                </button>
+<!--                <button-->
+<!--                  class="ss-reset-button apply-btn"-->
+<!--                  v-if="[10, 20, 30].includes(state.orderInfo.status) && item.afterSaleStatus === 0"-->
+<!--                  @tap.stop="-->
+<!--                    sheep.$router.go('/pages/order/aftersale/apply', {-->
+<!--                      orderId: state.orderInfo.id,-->
+<!--                      itemId: item.id,-->
+<!--                    })-->
+<!--                  "-->
+<!--                >-->
+<!--                  申请售后-->
+<!--                </button>-->
                 <button
                   class="ss-reset-button apply-btn"
                   v-if="item.afterSaleStatus === 10"
