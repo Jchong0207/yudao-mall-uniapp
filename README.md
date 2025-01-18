@@ -7,6 +7,14 @@
 
 如果这个项目让你有所收获，记得 Star 关注哦，这对我是非常不错的鼓励与支持。
 
+## 💥 On Every Version Update (JC) 💥
+1. Code Change
+2. run "npm install" / "npm install --legacy-peer-deps"
+3. go to root/index.js then run on browser
+4. (if able to start up locally) => proceed to Build for web
+5. unrelease/dist folder will be generated upon successful build
+6. replace the dist under root with the latest dist in the unrelease/dist
+
 ## 🐶 新手必读
 
 * 演示地址：<https://doc.iocoder.cn/mall-preview/>
