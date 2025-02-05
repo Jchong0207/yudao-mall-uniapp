@@ -1,14 +1,14 @@
+# Set the working directory
+WORKDIR /app
+
+# Copy package.json and package-lock.json first to leverage Docker caching
+COPY package.json package-lock.json ./
+
 # Use the official Nginx image
 FROM nginx:latest
 
-# Set the working directory
-WORKDIR /usr/share/nginx/html
-
-# Remove default Nginx static files
-RUN rm -rf ./*
-
 # Copy the built UniApp files from the dist folder to Nginx's serving directory
-COPY dist/ .
+COPY /app/dist/ .
 
 # Expose port 3000 for serving the UniApp frontend
 EXPOSE 3000
