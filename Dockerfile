@@ -1,9 +1,3 @@
-# Set the working directory
-WORKDIR /app
-
-# Copy package.json and package-lock.json first to leverage Docker caching
-COPY package.json package-lock.json ./
-
 # Use the official Nginx image
 FROM nginx:latest
 
