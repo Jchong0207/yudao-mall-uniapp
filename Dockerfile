@@ -8,7 +8,7 @@ WORKDIR /usr/share/nginx/html
 RUN rm -rf ./*
 
 # Copy the built UniApp files from the local `dist` folder to Nginx's serving directory
-COPY dist/ .
+COPY /app/dist .
 
 # Expose port 3000 for serving the UniApp frontend
 EXPOSE 3000
