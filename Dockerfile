@@ -1,24 +1,20 @@
-# Build stage
-FROM node:18 AS builder
+# Use Node.js to run the application (if it's a Node.js app)
+FROM node:18
 
+# Set the working directory
 WORKDIR /app
 
-COPY package.json package-lock.json ./
+# Copy the pre-built files from your local system to the container
+COPY /dist /app
 
-RUN npm install
+# Install any necessary dependencies (if not already in the pre-built files)
+# RUN npm install (Only if you need to install additional dependencies)
 
-COPY . .
+# Expose the port that your app will run on (3000 for example)
+EXPOSE 3000
 
-RUN npm run build
-
-# Use a lightweight image to copy the built files
-FROM busybox:1.35.0-uclibc
-
-WORKDIR /app
-
-COPY --from=builder /app/dist /app
-
-CMD ["/bin/sh", "-c", "echo 'UniApp container ready to copy files to host'"]
+# Command to run the app
+CMD ["npm", "start"]
 
 # # Use the official Nginx image
 # FROM nginx:latest
@@ -36,4 +32,4 @@ CMD ["/bin/sh", "-c", "echo 'UniApp container ready to copy files to host'"]
 # EXPOSE 3000
 
 # Start Nginx server
-CMD ["nginx", "-g", "daemon off;"]
+# CMD ["nginx", "-g", "daemon off;"]
