@@ -57,6 +57,6 @@ jobs:
             docker stop uniapp-mall || true
             docker rm uniapp-mall || true
             docker rmi $(docker images -f "dangling=true" -q) || true
-            docker run -d -p 3000:3000 --name uniapp-mall \
+            docker run -d -p 3000:3000 --name uniapp-mall --network application_network \
             -v /etc/nginx/conf.d/uniapp-mall.conf:/etc/nginx/conf.d/default.conf:ro \
             ngjingchong/uniapp-mall:amd64
