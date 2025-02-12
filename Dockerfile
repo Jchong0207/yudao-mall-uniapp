@@ -7,6 +7,9 @@ WORKDIR /usr/share/nginx/html
 # Remove default Nginx static files
 RUN rm -rf ./*
 
+# Install nano in the Nginx container
+RUN apt update && apt install -y nano
+
 # Copy the built UniApp files from the local `dist` folder to Nginx's serving directory
 COPY /dist .
 
