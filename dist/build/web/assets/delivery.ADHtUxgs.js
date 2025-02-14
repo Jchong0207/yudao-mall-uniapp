@@ -1,1 +1,0 @@
-import{aa as e}from"./index-BKnI5veo.js";const r={getDeliveryExpressList:()=>e({url:"/trade/delivery/express/list",method:"get"}),getDeliveryPickUpStoreList:r=>e({url:"/trade/delivery/pick-up-store/list",method:"GET",params:r}),getDeliveryPickUpStore:r=>e({url:"/trade/delivery/pick-up-store/get",method:"GET",params:{id:r}})};export{r as D};
