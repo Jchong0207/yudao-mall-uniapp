@@ -1,1 +1,0 @@
-import{aa as t}from"./index-Bw34y8dl.js";const o={getCategoryList:()=>t({url:"/product/category/list",method:"GET"}),getCategoryListByIds:o=>t({url:"/product/category/list-by-ids",method:"GET",params:{ids:o}})};export{o as C};
