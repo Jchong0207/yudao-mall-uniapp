@@ -12,11 +12,14 @@
         </view>
       </view>
 
+      <!-- <pre>{{ JSON.stringify(state.payMethods, null, 2) }}</pre> -->
+
       <!-- 支付方式 -->
       <view class="modal-content ss-flex-1">
         <view class="pay-title ss-p-l-30 ss-m-y-30">选择支付方式</view>
         <radio-group @change="onTapPay">
-          <label class="pay-type-item" v-for="item in state.payMethods" :key="item.title">
+          <label class="pay-type-item" v-for="item in state.payMethods.filter(method => !method.disabled)" :key="item.title">
+          <!-- <label class="pay-type-item" v-for="item in state.payMethods" :key="item.title"> -->
             <view
               class="pay-item ss-flex ss-col-center ss-row-between ss-p-x-30 border-bottom"
               :class="{ 'disabled-pay-item': item.disabled }"
@@ -183,6 +186,7 @@
     if (code !== 0) {
       return;
     }
+    console.log(getPayMethods(data));
     state.payMethods = getPayMethods(data);
     state.payMethods.find((item) => {
       if (item.value && !item.disabled) {
